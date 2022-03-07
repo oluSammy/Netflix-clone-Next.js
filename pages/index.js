@@ -2,9 +2,9 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Banner from "../components/banner/Banner";
 import Nav from "../components/nav/Nav";
-import Card from "../components/card/Card";
 import SectionCards from "../components/card/Section-cards";
 import { getVideos } from "../lib/videos";
+import magicKey from "../lib/majic-client";
 
 export async function getServerSideProps() {
   const disneyVideos = await getVideos("disney");
@@ -30,6 +30,8 @@ export default function Home({
   popularVideos,
   ronaldoVideos,
 }) {
+  console.log({ magicKey });
+
   return (
     <div className={styles.container}>
       <Head>
